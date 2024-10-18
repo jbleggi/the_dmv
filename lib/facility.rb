@@ -1,5 +1,6 @@
 class Facility
   attr_reader :name, :address, :phone, :services
+
 # to take a hash of attr and assign to instance var
   def initialize(branch = {})
     @name = branch[:name]
