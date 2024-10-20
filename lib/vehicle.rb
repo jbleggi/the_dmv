@@ -9,14 +9,20 @@ class Vehicle
     @make = vehicle_details[:make]
     @model = vehicle_details[:model]
     @engine = vehicle_details[:engine]
+    @registration_date = []
   end
 
-  def actual_year
-    @actual_year = 2024
+  def registration_date
+    @reg_year = 2024
+    @reg_month = 10
+  end
+
+  def register_vehicle(vehicle)
+    @registration_date << [@reg_month, @reg_year]
   end
 
   def antique?
-    actual_year - @year > 25
+    @reg_year - @year > 25
   end
 
   def electric_vehicle?
@@ -25,6 +31,4 @@ class Vehicle
 
 end
 
-# @cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
-
-# require 'pry'; binding.pry
+require 'pry'; binding.pry

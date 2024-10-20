@@ -1,5 +1,5 @@
 class Facility
-  attr_reader :name, :address, :phone, :services
+  attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees
 
 # to take a hash of attr and assign to instance var
   def initialize(branch = {})
@@ -7,9 +7,12 @@ class Facility
     @address = branch[:address]
     @phone = branch[:phone]
     @services = []
+    @registered_vehicles = []
+    @collected_fees = []
   end
 
   def add_service(service)
     @services << service
   end
+
 end
