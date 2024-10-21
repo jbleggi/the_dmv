@@ -25,29 +25,32 @@ class Vehicle
   end
 
   def plate_type
-    if @antique? == true
-      @plate_type << [:antique]
-    elsif @electric_vehicle? == true
-      @plate_type << [:ev]
+    if antique?
+      :antique
+    elsif electric_vehicle?
+      :ev
     else
-      @plate_type << [:regular]
+      :regular
     end
   end
 
-  # def registration_fee
-  #   if @antique? == true
-  #     @registration_fee << $25
-  #   elsif electric_vehicle? == true
-  #     @registration_fee << $200
-  #   else
-  #     @registration_fee << $100
-  #   end
-  # end
+  def registration_fee
+    case plate_type
+    when :antique
+      25
+    when :ev
+      200
+    when :regular
+      100
+    else
+      0
+    end
+  end
 
 end
 
-cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
-bolt = Vehicle.new({vin: '987654321abcdefgh', year: 2019, make: 'Chevrolet', model: 'Bolt', engine: :ev} )
-camaro = Vehicle.new({vin: '1a2b3c4d5e6f', year: 1969, make: 'Chevrolet', model: 'Camaro', engine: :ice} )
+# cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
+# bolt = Vehicle.new({vin: '987654321abcdefgh', year: 2019, make: 'Chevrolet', model: 'Bolt', engine: :ev} )
+# camaro = Vehicle.new({vin: '1a2b3c4d5e6f', year: 1969, make: 'Chevrolet', model: 'Camaro', engine: :ice} )
 
 # require 'pry'; binding.pry
