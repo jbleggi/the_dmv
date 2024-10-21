@@ -15,4 +15,8 @@ class Facility
     @services << service
   end
 
+  # def register_vehicle(vehicle)
+    # @vehicle.registration_date << [@reg_month, @reg_year]
+  # end
+
 end
