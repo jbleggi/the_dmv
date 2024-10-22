@@ -1,4 +1,5 @@
 require 'pry'
+require_relative '../lib/vehicle_factory'
 require_relative '../lib/registrant'
 require_relative '../lib/dmv'
 require_relative '../lib/facility'
