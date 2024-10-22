@@ -36,3 +36,6 @@ class DmvDataService
     @mo_dmv_office_locations ||= load_data('https://data.mo.gov/resource/835g-7keg.json')
   end
 end
+
+# require 'pry'; binding.pry
+
