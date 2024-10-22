@@ -16,8 +16,7 @@ RSpec.describe Vehicle do
       expect(@cruz.make).to eq('Chevrolet')
       expect(@cruz.model).to eq('Cruz')
       expect(@cruz.engine).to eq(:ice)
-      # expect(@cruz.registration_date).to eq(nil)
-      ## how do I get nil instead of []?
+      expect(@cruz.registration_date).to eq(nil)
     end
   end
 
