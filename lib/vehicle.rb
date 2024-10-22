@@ -1,7 +1,5 @@
-# require_relative '../lib/date'
-
 class Vehicle
-  attr_reader :vin, :year, :make, :model, :engine, :registration_date
+  attr_reader :vin, :year, :make, :model, :engine, :registration_date, :registration_fee, :plate_type
 
   def initialize(vehicle_details)
     @vin = vehicle_details[:vin]
@@ -9,14 +7,11 @@ class Vehicle
     @make = vehicle_details[:make]
     @model = vehicle_details[:model]
     @engine = vehicle_details[:engine]
-  end
-
-  def actual_year
-    @actual_year = 2024
+    @plate_type = []
   end
 
   def antique?
-    actual_year - @year > 25
+    @year <= 1999
   end
 
   def electric_vehicle?
@@ -24,7 +19,3 @@ class Vehicle
   end
 
 end
-
-# @cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
-
-# require 'pry'; binding.pry
