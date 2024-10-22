@@ -47,8 +47,11 @@ class Facility
   end
 
   def administer_road_test(registrant)
-    return false unless services.include?('Road Test')
+    if registrant.license_data[:written] == true && registrant.permit? == true && services.include?('Road Test')
     registrant.license_data[:license] = true
+    else
+      false
+    end
   end
 
 end
@@ -65,6 +68,7 @@ facility_2 = Facility.new({name: 'DMV Northeast Branch', address: '4685 Peoria S
 # camaro = Vehicle.new({vin: '1a2b3c4d5e6f', year: 1969, make: 'Chevrolet', model: 'Camaro', engine: :ice} )
 
 facility_1.add_service('Written Test')
+facility_1.administer_written_test(registrant_1)
 registrant_2.earn_permit
 
 require 'pry'; binding.pry
